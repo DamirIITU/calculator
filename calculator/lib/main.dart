@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
         home: Calculator());
   }
 }
@@ -23,7 +23,6 @@ class Calculator extends StatefulWidget {
 
 class _CalculatorState extends State<Calculator> {
   dynamic displaytxt = 20;
-  //Button Widget
   Widget calcbutton(String buttontxt,Color buttoncolor,Color textcolor){
     return  Container(
       child: RaisedButton(
@@ -36,7 +35,6 @@ class _CalculatorState extends State<Calculator> {
             color: textcolor,
           ),
         ),
-        // shape: CircleBorder(),
         color: buttoncolor,
         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 1),
       ),
@@ -62,11 +60,13 @@ class _CalculatorState extends State<Calculator> {
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                    child: Text('$text',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 100,
+                    child: Expanded(
+                      child: Text('$text',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 80,
+                        ),
                       ),
                     ),
                   )
